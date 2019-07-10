@@ -1,5 +1,7 @@
 FROM python:alpine
 
+ENV GLPK_VERSION="4.65"
+
 RUN set -o errexit -o nounset \
 	\
 	&& echo "Installing dependencies" \
