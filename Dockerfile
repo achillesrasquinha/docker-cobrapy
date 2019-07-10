@@ -1,4 +1,4 @@
-FROM python:alpine
+FROM python:3.7-alpine
 
 ENV GLPK_VERSION="4.65"
 
@@ -26,8 +26,8 @@ RUN set -o errexit -o nounset \
 	&& rm -rf /glpk-"$GLPK_VERSION"* \
 	\
 	&& echo "Installing CobraPy" \
-	\
-	&& pip install cobrapy
+
+RUN pip install cobrapy
 
 COPY ./entrypoint /entrypoint
 RUN sed -i 's/\r//' /entrypoint \
