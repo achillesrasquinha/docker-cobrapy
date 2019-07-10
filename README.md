@@ -1,8 +1,8 @@
-### Docker IPython
+### Docker CobraPy
 
-[![Docker Cloud Build Status](https://img.shields.io/docker/cloud/build/achillesrasquinha/ipython.svg)](https://hub.docker.com/r/achillesrasquinha/ipython)
+[![Docker Cloud Build Status](https://img.shields.io/docker/cloud/build/achillesrasquinha/cobrapy.svg)](https://hub.docker.com/r/achillesrasquinha/cobrapy)
 
-> Alpine-based Docker Image for IPython
+> Alpine-based Docker Image for CobraPy
 
 #### Usage
 
@@ -10,7 +10,7 @@
 $ docker run \
     --rm \
     -it \
-    achillesrasquinha/ipython
+    achillesrasquinha/cobrapy
 ```
 
 ### License
