@@ -23,7 +23,7 @@ RUN set -o errexit -o nounset \
 	&& make install \
 	&& rm -rf /glpk-"$GLPK_VERSION"* \
 	\
-	&& echo "Installing CobraPy"
+	&& echo "Installing CobraPy" \
 	\
 	&& pip install cobrapy
 
