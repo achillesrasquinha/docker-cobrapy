@@ -23,11 +23,9 @@ RUN set -o errexit -o nounset \
 	&& ./configure \
 	&& echo "Installing Constraint-Based-Modelling Parser" \
 	&& make install \
-	&& rm -rf /glpk-"$GLPK_VERSION"* \
-	\
-	&& echo "Installing CobraPy" \
+	&& rm -rf /glpk-"$GLPK_VERSION"*
 
-RUN pip install cobrapy
+RUN pip install cobra
 
 COPY ./entrypoint /entrypoint
 RUN sed -i 's/\r//' /entrypoint \
