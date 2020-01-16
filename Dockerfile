@@ -25,6 +25,10 @@ RUN set -o errexit -o nounset \
 	&& make install \
 	&& rm -rf /glpk-"$GLPK_VERSION"*
 
+COPY ./requirements.txt /requirements.txt
+
+RUN pip install -r /requirements.txt
+
 RUN pip install cobra
 
 COPY ./entrypoint /entrypoint
