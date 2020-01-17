@@ -1,4 +1,4 @@
-FROM python:3.7-alpine
+FROM alpine:latest
 
 ENV GLPK_VERSION="4.65"
 
@@ -11,9 +11,12 @@ RUN set -o errexit -o nounset \
 		gcc \
 		g++ \
 		make \
+		musl-dev \
 		python3-dev \
 		py3-pip \
 		swig \
+		gfortran \
+		openblas-dev \
 	\
 	&& echo "Fetching GLPK (Version "$GLPK_VERSION")" \
 	\
@@ -25,11 +28,7 @@ RUN set -o errexit -o nounset \
 	&& make install \
 	&& rm -rf /glpk-"$GLPK_VERSION"*
 
-COPY ./requirements.txt /requirements.txt
-
-RUN pip install -r /requirements.txt
-
-RUN pip install cobra
+RUN pip3 install cobra
 
 COPY ./entrypoint /entrypoint
 RUN sed -i 's/\r//' /entrypoint \
